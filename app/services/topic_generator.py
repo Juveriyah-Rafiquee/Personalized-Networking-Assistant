@@ -7,14 +7,16 @@ from app.config import MODEL_NAMES
 generator = pipeline("text-generation", model=MODEL_NAMES["text_generator"])
 set_seed(42)
 
-def generate_topics(event_themes, user_interests, facts=None):
+def generate_topics(event_themes, user_interests, facts=None, bio=None):
     facts = facts or []
     valid_facts = [f for f in facts if f and "failed" not in f.lower() and "no summary" not in f.lower()]
     fact_snippet = valid_facts[0][:200] if valid_facts else ""
+    bio_snippet = f"About me: {bio}. " if bio else ""
 
     prompt = (
         f"I'm at a networking event about {', '.join(event_themes)}. "
         f"I'm interested in {', '.join(user_interests)}. "
+        f"{bio_snippet}"
         f"Fact: {fact_snippet} "
         f"A good conversation starter I could say is:"
     )

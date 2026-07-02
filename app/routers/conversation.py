@@ -34,15 +34,15 @@ def generate_conversation(data: ConversationRequest):
     facts = fact_checker.fact_check_many(themes)
 
     # 3. Generate starters using themes + interests + facts as context
-    suggestions = topic_generator.generate_topics(themes, data.interests, facts)
-
+    suggestions = topic_generator.generate_topics(themes, data.interests, facts, data.bio)
     # 4. Log the full session
     history_logger.log_conversation({
         "description": data.description,
         "interests": data.interests,
         "topics": themes,
         "facts": facts,
-        "suggestions": suggestions
+        "suggestions": suggestions,
+        "bio": data.bio
     })
 
     return ConversationResponse(topics=themes, facts=facts, suggestions=suggestions)

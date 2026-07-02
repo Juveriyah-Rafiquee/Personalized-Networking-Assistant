@@ -12,6 +12,7 @@ class UserInterests(BaseModel):
 class ConversationRequest(BaseModel):
     description: str
     interests: List[str]
+    bio: str
 
 class ConversationResponse(BaseModel):
     topics: List[str]
