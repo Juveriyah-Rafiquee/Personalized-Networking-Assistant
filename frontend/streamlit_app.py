@@ -1,5 +1,7 @@
 # frontend/streamlit_app.py
 
+import json
+from pathlib import Path
 import streamlit as st
 import requests
 
@@ -54,3 +56,26 @@ if "suggestions" in st.session_state:
             if st.button("👎", key=f"dislike_{i}"):
                 requests.post(f"{BASE_URL}/feedback", params={"suggestion": suggestion, "action": "dislike"})
                 st.info("Feedback noted.")
+
+
+# --- CONVERSATION HISTORY ---
+
+st.markdown("---")
+st.subheader("📜 View Previous Conversations")
+
+if st.button("Show History"):
+    history_path = Path("history.json")
+    if history_path.exists():
+        with open(history_path, "r") as f:
+            history = json.load(f)
+        for item in reversed(history[-5:]):  # show latest 5
+            st.markdown(f"**🕐 {item['timestamp']}**")
+            st.write("**Event:**", item["description"])
+            st.write("**Interests:**", ", ".join(item["interests"]))
+            st.write("**Topics:**", ", ".join(item["topics"]))
+            st.write("**Suggestions:**")
+            for s in item["suggestions"]:
+                st.markdown(f"- {s}")
+            st.markdown("---")
+    else:
+        st.info("No history found yet.")
