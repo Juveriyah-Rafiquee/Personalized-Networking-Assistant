@@ -45,3 +45,12 @@ if "suggestions" in st.session_state:
     st.subheader("💬 Conversation Starters")
     for i, suggestion in enumerate(st.session_state["suggestions"]):
         st.markdown(f"- {suggestion}")
+        col1, col2 = st.columns([1, 1])
+        with col1:
+            if st.button("👍", key=f"like_{i}"):
+                requests.post(f"{BASE_URL}/feedback", params={"suggestion": suggestion, "action": "like"})
+                st.success("Thanks for the feedback!")
+        with col2:
+            if st.button("👎", key=f"dislike_{i}"):
+                requests.post(f"{BASE_URL}/feedback", params={"suggestion": suggestion, "action": "dislike"})
+                st.info("Feedback noted.")
