@@ -111,5 +111,29 @@
     ],
     "bio": "Second-year CS student interested in machine learning and climate tech",
     "timestamp": "2026-07-03T04:43:08.002123"
+  },
+  {
+    "description": "A conference on AI applications in sustainable urban planning",
+    "interests": [
+      "renewable energy",
+      "smart cities"
+    ],
+    "topics": [
+      "sustainability",
+      "leadership",
+      "technology"
+    ],
+    "facts": [
+      "Sustainability or being sustainable is the ability to continue over a long period of time. In modern usage it generally refers to a state in which the environment, economy, and society will continue to exist over a long period of time. Many definitions emphasize the environmental dimension. This can include addressing key environmental problems, such as climate change and biodiversity loss. The idea of sustainability can guide decisions at the global, national, organizational, and individual levels. A related concept is that of sustainable development, and the terms are often used to mean the same thing. \"Sustainability is often thought of as a long-term goal, while sustainable development refers to the many processes and pathways to achieve it.\"",
+      "Leadership, is defined as the ability of an individual, group, or organization to influence, or guide other individuals, teams, or organizations.",
+      "Technology is the application of conceptual knowledge to achieve practical goals, especially in a reproducible way. The word technology can also mean the products resulting from such efforts, including both tangible tools such as utensils or machines, and intangible ones such as software. Technology plays a critical role in science, engineering, and everyday life."
+    ],
+    "suggestions": [
+      "\"Why do you think we're seeing this kind,\" if not something that was developed by industry?",
+      "\"what do you want for your day?",
+      "\"Yes."
+    ],
+    "bio": "Second-year CS student interested in machine learning and climate tech",
+    "timestamp": "2026-07-03T15:43:32.832529"
   }
 ]
