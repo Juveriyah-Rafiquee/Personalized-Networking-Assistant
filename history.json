@@ -207,5 +207,55 @@
     ],
     "bio": "test bio",
     "timestamp": "2026-07-04T15:11:48.743493"
+  },
+  {
+    "description": "A tech meetup exploring how artificial intelligence is being applied to renewable energy grids and smart city infrastructure.",
+    "interests": [
+      "machine learning",
+      "climate tech",
+      "urban planning"
+    ],
+    "topics": [
+      "artificial intelligence",
+      "technology",
+      "entrepreneurship"
+    ],
+    "facts": [
+      "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. It is a field of research in engineering, mathematics and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximize their chances of achieving defined goals.",
+      "Technology is the application of conceptual knowledge to achieve practical goals, especially in a reproducible way. The word technology can also mean the products resulting from such efforts, including both tangible tools such as utensils or machines, and intangible ones such as software. Technology plays a critical role in science, engineering, and everyday life.",
+      "Entrepreneurship is the creation or extraction of economic value by identifying and commercializing opportunities to deliver products or services, a process that typically requires considerable initiation and bears risk."
+    ],
+    "suggestions": [
+      "\"Why do you think it's possible for robots?",
+      "\"There's really no other way you do this.",
+      "\"Yes."
+    ],
+    "bio": "First-year Computer Science student interested in machine learning, with a growing interest in how AI can support sustainability efforts.",
+    "timestamp": "2026-07-04T16:15:29.088740"
+  },
+  {
+    "description": "A tech meetup exploring how artificial intelligence is being applied to renewable energy grids and smart city infrastructure.",
+    "interests": [
+      "machine learning",
+      "climate tech",
+      "urban planning"
+    ],
+    "topics": [
+      "artificial intelligence",
+      "technology",
+      "entrepreneurship"
+    ],
+    "facts": [
+      "Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. It is a field of research in engineering, mathematics and computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximize their chances of achieving defined goals.",
+      "Technology is the application of conceptual knowledge to achieve practical goals, especially in a reproducible way. The word technology can also mean the products resulting from such efforts, including both tangible tools such as utensils or machines, and intangible ones such as software. Technology plays a critical role in science, engineering, and everyday life.",
+      "Entrepreneurship is the creation or extraction of economic value by identifying and commercializing opportunities to deliver products or services, a process that typically requires considerable initiation and bears risk."
+    ],
+    "suggestions": [
+      "We're getting smarter through automation because we need robots around more frequently now than ever before .",
+      "\"What do you think?",
+      "\"Hey let's talk business."
+    ],
+    "bio": "First-year Computer Science student interested in machine learning, with a growing interest in how AI can support sustainability efforts.",
+    "timestamp": "2026-07-04T16:16:29.894768"
   }
 ]
