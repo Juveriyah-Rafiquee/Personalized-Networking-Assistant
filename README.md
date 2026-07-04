@@ -30,10 +30,7 @@ This assistant automates context-aware preparation: it extracts key themes from 
 
 ## Architecture
 
-Streamlit UI  →  FastAPI Backend  →  event_analyzer.py (DistilBERT)
-→  fact_checker.py (Wikipedia API)
-→  topic_generator.py (GPT-2, grounded on facts)
-→  history_logger.py / feedback_logger.py (local JSON)
+![System Architecture](assets/architecture_diagram.png)
 
 See the full documentation in Folders 1-8 of this repository for detailed requirements, design decisions, and testing.
 
