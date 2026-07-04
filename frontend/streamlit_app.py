@@ -4,6 +4,11 @@ import json
 from pathlib import Path
 import streamlit as st
 import requests
+import sys
+
+#Add root project directory to Python path to import app modules
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+from app.services import feedback_logger
 
 # Backend base URL
 BASE_URL = "http://127.0.0.1:8000"
@@ -37,7 +42,7 @@ if st.button("Generate Conversation Starters"):
         else:
             st.error("Failed to generate conversation starters.")
     else:
-        st.warning("Please enter both an event description and your interests.")
+        st.warning("Please enter both an event description, bio and your interests.")
 
 # --- DISPLAY RESULTS ---
 if "suggestions" in st.session_state:
@@ -50,12 +55,30 @@ if "suggestions" in st.session_state:
         col1, col2 = st.columns([1, 1])
         with col1:
             if st.button("👍", key=f"like_{i}"):
+                feedback_logger.log_feedback(suggestion, "like")
                 requests.post(f"{BASE_URL}/feedback", params={"suggestion": suggestion, "action": "like"})
                 st.success("Thanks for the feedback!")
         with col2:
             if st.button("👎", key=f"dislike_{i}"):
+                feedback_logger.log_feedback(suggestion, "dislike")
                 requests.post(f"{BASE_URL}/feedback", params={"suggestion": suggestion, "action": "dislike"})
                 st.info("Feedback noted.")
+
+
+#--- FACT CHECK SECTION ---
+st.markdown("---")
+st.subheader("🔍 Quick Fact-Check")
+
+query = st.text_input("Enter a topic to fact-check:")
+if st.button("Fact-Check"):
+    if query:
+        response = requests.post(f"{BASE_URL}/fact-check", json={"query": query})
+        if response.status_code == 200:
+            st.success(response.json()["summary"])
+        else:
+            st.error("Failed to fetch fact-check information.")
+    else:
+        st.warning("Please enter a topic to fact-check.")
 
 
 # --- CONVERSATION HISTORY ---
@@ -79,3 +102,19 @@ if st.button("Show History"):
             st.markdown("---")
     else:
         st.info("No history found yet.")
+
+st.markdown("---")
+st.subheader("📁View Feedback History")
+
+if st.button("Show Feedback History"):
+    feedback_path = Path("feedback.json")
+    if feedback_path.exists():
+        with open(feedback_path, "r") as f:
+            feedback_data = json.load(f)
+        for item in reversed(feedback_data[-10:]):  # show latest 10
+            icon= "👍🏻" if item["feedback"] == "like" else "👎🏻"
+            st.markdown(f"{icon} **{item['suggestion']}**")
+            st.caption(f"🕐 {item['timestamp']}")
+            st.markdown("---")
+    else:
+        st.info("No feedback history found yet.")
