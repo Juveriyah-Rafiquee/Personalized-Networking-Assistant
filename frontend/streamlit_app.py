@@ -6,10 +6,6 @@ import streamlit as st
 import requests
 import sys
 
-#Add root project directory to Python path to import app modules
-sys.path.append(str(Path(__file__).resolve().parent.parent))
-from app.services import feedback_logger
-
 # Backend base URL
 BASE_URL = "http://127.0.0.1:8000"
 
@@ -55,12 +51,10 @@ if "suggestions" in st.session_state:
         col1, col2 = st.columns([1, 1])
         with col1:
             if st.button("👍", key=f"like_{i}"):
-                feedback_logger.log_feedback(suggestion, "like")
                 requests.post(f"{BASE_URL}/feedback", params={"suggestion": suggestion, "action": "like"})
                 st.success("Thanks for the feedback!")
         with col2:
             if st.button("👎", key=f"dislike_{i}"):
-                feedback_logger.log_feedback(suggestion, "dislike")
                 requests.post(f"{BASE_URL}/feedback", params={"suggestion": suggestion, "action": "dislike"})
                 st.info("Feedback noted.")
 
