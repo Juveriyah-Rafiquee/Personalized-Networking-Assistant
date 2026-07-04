@@ -30,7 +30,7 @@ This assistant automates context-aware preparation: it extracts key themes from 
 
 ## Architecture
 
-![System Architecture](assets/architecture_diagram.png)
+![System Architecture](assets/architecture_diagram.jpg)
 
 See the full documentation in Folders 1-8 of this repository for detailed requirements, design decisions, and testing.
 
