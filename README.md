@@ -8,6 +8,8 @@ Approaching new contacts at professional or social networking events can be inti
 
 ## Solution
 
+Demo Video: https://drive.google.com/file/d/1ftqcL5YI41BQBa51X-K4KfHAUl7j91cc/view?usp=sharing
+
 This assistant automates context-aware preparation: it extracts key themes from an event description, retrieves verified facts about those themes from Wikipedia, and generates tailored conversation starters — grounded in real facts, not invented ones.
 
 ## Features
